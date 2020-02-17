@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,11 +17,11 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:background="@color/black77"
+            android:contentDescription="@null"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@mipmap/ic_launcher" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textName"
@@ -35,8 +34,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/imageHeritage"
-            tools:text="Historic Town of Ouro Preto" />
+            app:layout_constraintTop_toTopOf="@id/imageHeritage" />
 
         <TextView
             android:id="@+id/textShortInfo"
@@ -45,23 +43,23 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
-            android:textColor="@color/black"
             android:maxHeight="@dimen/shortInfoMaxHeight"
             android:paddingBottom="24dp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageHeritage"
-            tools:text="Historic Town of Ouro Preto\n\nFounded at the end of the 17th century, Ouro Preto (Black Gold) was the focal point of the gold rush and Brazil’s golden age in the 18th century. With the exhaustion of the gold mines in the 19th century, the city’s influence declined but many churches, bridges and fountains remain as a testimony to its past prosperity and the exceptional talent of the Baroque sculptor Aleijadinho." />
+            app:layout_constraintTop_toBottomOf="@id/imageHeritage" />
 
         <ImageView
             android:id="@+id/imageShowMore"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingBottom="4dp"
+            android:background="@drawable/bg_show_more"
+            android:contentDescription="@null"
             android:paddingTop="24dp"
+            android:paddingBottom="4dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_arrow_down"
-            android:background="@drawable/bg_show_more"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

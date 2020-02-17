@@ -1,6 +1,5 @@
 package com.maicondcastro.worldheritages.common.presentation.ui
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

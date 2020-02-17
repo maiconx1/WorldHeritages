@@ -12,13 +12,17 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.maicondcastro.worldheritages.R
 import com.maicondcastro.worldheritages.common.presentation.ui.BaseFragment
 import com.maicondcastro.worldheritages.heritage.presentation.HeritageDetailInteractor
 import com.maicondcastro.worldheritages.heritage.presentation.entity.HeritageView
 import kotlinx.android.synthetic.main.fragment_heritage_detail.*
+import java.lang.Exception
 
-class HeritageDetailFragment : BaseFragment(), HeritageDetailInteractor.View {
+class HeritageDetailFragment : BaseFragment(), HeritageDetailInteractor.View, OnMapReadyCallback {
 
     override val layoutResId: Int = R.layout.fragment_heritage_detail
     override val customNavigationIcon: Int = R.drawable.ic_arrow_back
@@ -63,6 +67,7 @@ class HeritageDetailFragment : BaseFragment(), HeritageDetailInteractor.View {
                 .into(imageFullHeritage)
         }
         textYear.text = heritageView.year.toString()
+        textRegion.text = heritageView.regionLong
         textInfo.text = heritageView.longInfo
         if (textInfo.text.isEmpty()) {
             textInfo.text = heritageView.shortInfo
@@ -74,6 +79,17 @@ class HeritageDetailFragment : BaseFragment(), HeritageDetailInteractor.View {
         super.onViewCreated(view, savedInstanceState)
         setupView()
         setListeners()
+
+        mapView.onCreate(savedInstanceState)
+        mapView.onResume()
+
+        try {
+            MapsInitializer.initialize(context)
+        } catch (ex: Exception) {
+            ex.printStackTrace()
+        }
+
+        mapView.getMapAsync(this)
     }
 
     override fun onBackPressed() {
@@ -95,5 +111,17 @@ class HeritageDetailFragment : BaseFragment(), HeritageDetailInteractor.View {
             frameFullImage.visibility = VISIBLE
             showingImage = true
         }
+    }
+
+    override fun onMapReady(googleMap: GoogleMap?) {
+        val latLng = LatLng(heritageView.lat, heritageView.lng)
+        googleMap?.apply {
+            addMarker(
+                MarkerOptions().position(latLng)
+                    .title(heritageView.name)
+            )
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
+        }
+
     }
 }

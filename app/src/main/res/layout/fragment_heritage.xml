@@ -41,6 +41,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
+            android:contentDescription="@null"
             android:src="@drawable/ic_first_page"
             app:layout_constraintBottom_toBottomOf="@id/textPage"
             app:layout_constraintEnd_toStartOf="@id/imagePrevious"
@@ -51,6 +52,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
+            android:contentDescription="@null"
             android:src="@drawable/ic_arrow_left"
             app:layout_constraintBottom_toBottomOf="@id/textPage"
             app:layout_constraintEnd_toStartOf="@id/textPage"
@@ -66,14 +68,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="1" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageNext"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
+            android:contentDescription="@null"
             android:src="@drawable/ic_arrow_right"
             app:layout_constraintBottom_toBottomOf="@id/textPage"
             app:layout_constraintStart_toEndOf="@id/textPage"
@@ -85,6 +87,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_last_page"
+            android:contentDescription="@null"
             app:layout_constraintBottom_toBottomOf="@id/textPage"
             app:layout_constraintStart_toEndOf="@id/imageNext"
             app:layout_constraintTop_toTopOf="@id/textPage" />
