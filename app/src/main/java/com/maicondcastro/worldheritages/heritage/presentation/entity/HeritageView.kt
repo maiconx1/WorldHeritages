@@ -1,7 +1,10 @@
 package com.maicondcastro.worldheritages.heritage.presentation.entity
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class HeritageView(
     @SerializedName("coordinates")
     val coordinates: String?,
@@ -35,7 +38,7 @@ data class HeritageView(
     val year: Int,
     var listId: Long = 0,
     var showingInfo: Boolean = false
-) {
+) : Parcelable {
     override fun equals(other: Any?): Boolean {
         val heritage = other as HeritageView
         return id == heritage.id

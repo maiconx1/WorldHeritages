@@ -7,6 +7,7 @@ import com.maicondcastro.worldheritages.heritage.data.repository.HeritageReposit
 import com.maicondcastro.worldheritages.heritage.data.repository.impl.HeritageRepositoryImpl
 import com.maicondcastro.worldheritages.heritage.domain.GetHeritageUseCase
 import com.maicondcastro.worldheritages.heritage.domain.SaveHeritageUseCase
+import com.maicondcastro.worldheritages.heritage.presentation.ui.HeritageDetailFragment
 import com.maicondcastro.worldheritages.heritage.presentation.ui.HeritageFragment
 import com.maicondcastro.worldheritages.heritage.presentation.ui.adapter.HeritageAdapter
 import com.maicondcastro.worldheritages.heritage.presentation.viewmodel.HeritageViewModel

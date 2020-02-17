@@ -4,8 +4,4 @@ interface ViewInteractor {
 
     fun setupView()
 
-    fun showProgressLoading()
-
-    fun hideProgressLoading()
-
 }

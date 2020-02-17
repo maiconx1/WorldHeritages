@@ -11,10 +11,12 @@ interface HeritageInteractor {
         fun startObservers()
         fun setRecyclerView()
         fun changeList(list: List<HeritageView>)
+        fun openHeritage(heritageView: HeritageView)
     }
 
     interface ViewModel {
 
         fun showMore(id: Long)
+        fun openHeritage(heritageView: HeritageView)
     }
 }

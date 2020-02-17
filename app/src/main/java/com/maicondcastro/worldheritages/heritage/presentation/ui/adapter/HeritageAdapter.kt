@@ -23,7 +23,7 @@ class HeritageAdapter(private val viewModel: HeritageViewModel) :
     override fun onBindViewHolder(heritageHolder: HeritageHolder, itemPosition: Int) {
         heritageHolder.setupView(heritageList[itemPosition])
         heritageHolder.itemView.setOnClickListener {
-            //TODO: OPEN HERITAGE
+            viewModel.openHeritage(heritageList[itemPosition])
         }
     }
 

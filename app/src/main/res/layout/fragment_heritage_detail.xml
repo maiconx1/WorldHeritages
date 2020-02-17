@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageHeritage"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@color/grey_BBBBBB"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/textYear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:gravity="end"
+                android:textColor="@color/grey_BBBBBB"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageHeritage"
+                tools:text="1980" />
+
+            <TextView
+                android:id="@+id/textInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textYear"
+                tools:text="Located 513 km north of Rio de Janeiro, Ouro Preto (Black Gold) was the main focal point of the period known as the Golden Age of Brazil. Originally called Vila Rica, this city played a leading role in Brazil's history in the 18th century. It was created by thousands of soldiers of fortune eager to enrich themselves by exploiting the gold deposits; they were followed by many artists who came to settle and produce works of outstanding quality, such as the São Francisco of Assis church by Antonio Francisco Lisboa (Aleijadinho).\n\nOuro Preto, the old capital of Minas Gerais, owes its origins to the discovery and exploitation of the gold. The creation in 1698 of the Capitania de São Paulo e Minas do Ouro resulted in the earlier mining settlements being transformed into villas (small towns), the second of which was Vila Rica, in 1712. Minas Gerais became an independent Capitania in 1720, with Vila Rica as its capital. The growth of the town was rapid as a result of the rich mineral resources, and it developed its own urban features characteristic of a mining town. In the closing years of the 18th century it became a centre of the movement for the emancipation of Brazil from colonial rule known as Inconfidência Mineira. A rapid decline in mineral resources and mining resulted in a deterioration in the economy of this part of the province. In 1823 its status was changed to that of an imperial town, with the new name of Ouro Preto and this attracted a number of higher education establishments, but with the transfer of the provincial capital in 1897 to Belo Horizonte the fortunes of Ouro Preto declined again. Since the 1930s it has been principally a tourist centre.\n\nThe town was shaped by the grouping together of small settlements (arriais) in a hilly landscape, where the houses, mostly single- or two-storeyed, seem to support one another, forming an irregular urban layout that follows the contours of the landscape. However, the resources derived from mining, coupled with the talents of artists such as Aleijadinho and others, some outstanding architectural and artistic masterpieces are to be found. A 'Mining Baroque' style developed in the second half of the 18th century which successfully fused Brazilian influences with European Baroque and Rococo.\n\nThe Church of Saõ Francisco de Assis is considered to be a masterpiece of Brazilian architecture. Ouro Preto also boasts a number of other fine churches and secular buildings such as the churches of Our Lady of the Pillar, the Rosário dos Homens Pretos, the Virgin of the Conceição, and the Virgin of Carmel, the House of the Baroness, the chafarizes of the High Da Cruz and Alto of the Heads.\n\nTiradentes Square is the main point from which all the roads diverge. Around it are situated imposing public and private buildings, such as the old Parliament House (1784), today the Museum of the Inconfidência, and the Palace of the Governors, which has become the School of Mines and Metallurgy.\n\nThe townscape of Ouro Preto is also noteworthy for its bridges and fountains, all blending into an urban and natural setting of great beauty." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/frameFullImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:background="@color/grey_333333"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar">
+
+        <ImageView
+            android:id="@+id/imageFullHeritage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/textImageAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="8dp"
+            android:gravity="end"
+            android:textColor="@color/grey_BBBBBB"
+            android:textSize="15sp" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

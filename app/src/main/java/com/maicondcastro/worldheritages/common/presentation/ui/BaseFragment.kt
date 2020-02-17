@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import com.maicondcastro.worldheritages.R
 import com.maicondcastro.worldheritages.main.presentation.ui.MainActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -51,7 +50,6 @@ abstract class BaseFragment : Fragment() {
             } else {
                 AppCompatResources.getDrawable(context, customNavigationIcon)
             }
-            setTitleTextColor(Color.parseColor(resources.getString(R.string.colorAccent)))
             setNavigationOnClickListener { onBackPressed() }
         }
     }
@@ -73,10 +71,6 @@ abstract class BaseFragment : Fragment() {
 
     open fun onBackPressed() {
         (activity as? MainActivity)?.back()
-    }
-
-    protected fun showMessage(message: String, duration: Int = Snackbar.LENGTH_LONG) {
-        view?.apply { Snackbar.make(this, message, duration).show() }
     }
 
     fun setToolbarTitle(title: String) {

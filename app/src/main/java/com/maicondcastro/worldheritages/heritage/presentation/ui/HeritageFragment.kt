@@ -28,19 +28,11 @@ class HeritageFragment : BaseFragment(), HeritageInteractor.View {
     override fun onResume() {
         super.onResume()
         setToolbarTitle(getString(R.string.app_name))
+        setPage()
     }
 
     override fun fetchHeritage() {
-        showProgressLoading()
         firstPage()
-    }
-
-    override fun showProgressLoading() {
-
-    }
-
-    override fun hideProgressLoading() {
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -68,9 +60,16 @@ class HeritageFragment : BaseFragment(), HeritageInteractor.View {
 
     override fun startObservers() {
         observe(viewModel.liveHeritage) { heritageList ->
-            hideProgressLoading()
             changeList(heritageList)
         }
+        observe(viewModel.shouldOpenHeritage) { heritage ->
+            openHeritage(heritage)
+        }
+    }
+
+    override fun openHeritage(heritageView: HeritageView) {
+        val action = HeritageFragmentDirections.actionHeritageFragmentToHeritageDetailFragment(heritageView)
+        navigateTo(action)
     }
 
     override fun setRecyclerView() {
@@ -139,5 +138,25 @@ class HeritageFragment : BaseFragment(), HeritageInteractor.View {
 
     private fun setPage() {
         textPage.text = (viewModel.page+1).toString()
+        when (viewModel.page) {
+            0 -> {
+                imageFirst.visibility = GONE
+                imagePrevious.visibility = GONE
+                imageLast.visibility = VISIBLE
+                imageNext.visibility = VISIBLE
+            }
+            viewModel.qtdPages -> {
+                imageFirst.visibility = VISIBLE
+                imagePrevious.visibility = VISIBLE
+                imageLast.visibility = GONE
+                imageNext.visibility = GONE
+            }
+            else -> {
+                imageFirst.visibility = VISIBLE
+                imagePrevious.visibility = VISIBLE
+                imageLast.visibility = VISIBLE
+                imageNext.visibility = VISIBLE
+            }
+        }
     }
 }

@@ -16,7 +16,9 @@ class HeritageViewModel(
 ) : BaseViewModel(threadContextProvider), HeritageInteractor.ViewModel {
 
     val liveHeritage: SingleLiveEvent<List<HeritageView>> = SingleLiveEvent()
+    val shouldOpenHeritage: SingleLiveEvent<HeritageView> = SingleLiveEvent()
     private val heritageList: MutableList<HeritageView> = mutableListOf()
+
     val qtdPages: Int
         get() = _qtdPages
     private var _qtdPages: Int = 0
@@ -30,6 +32,10 @@ class HeritageViewModel(
             it.showingInfo = !it.showingInfo
             heritageList[heritageList.indexOf(it)] = it
         }
+    }
+
+    override fun openHeritage(heritageView: HeritageView) {
+        shouldOpenHeritage.postValue(heritageView)
     }
 
     private fun getHeritages() {

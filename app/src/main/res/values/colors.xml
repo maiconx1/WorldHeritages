@@ -3,8 +3,9 @@
     <color name="colorPrimary">#333333</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#333333</color>
-    <string name="colorAccent">#333333</string>
     <color name="black77">#77000000</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="grey_BBBBBB">#BBBBBB</color>
+    <color name="grey_333333">#333333</color>
 </resources>
