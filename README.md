@@ -1,2 +1,2 @@
-# world_heritages
+# World Heritages
 World heritages from a JSON file
